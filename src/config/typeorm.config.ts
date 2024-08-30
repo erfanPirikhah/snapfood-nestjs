@@ -10,7 +10,7 @@ config({
 export function TypeOrmConfig(): TypeOrmModuleOptions {
   const {DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USERNAME} = process.env;
   return {
-    type: "mysql",
+    type: "postgres",
     host: DB_HOST,
     port: DB_PORT,
     username: DB_USERNAME,
@@ -28,12 +28,12 @@ export function TypeOrmConfig(): TypeOrmModuleOptions {
 export function TypeOrmDataSourceConfig(): DataSourceOptions {
   const {DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USERNAME} = process.env;
   return {
-    type: "mysql",
-    host: "localhost",
-    port: 3306,
-    username: "root",
-    password: "",
-    database: "snappfood",
+    type: "postgres",
+    host: DB_HOST,
+    port: DB_PORT,
+    username: DB_NAME,
+    password: DB_PASSWORD,
+    database: DB_USERNAME,
     synchronize: true,
     entities: [
       "dist/**/**/**/*.entity{.ts,.js}",
