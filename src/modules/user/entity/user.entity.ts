@@ -1,13 +1,11 @@
 import { EntityName } from 'src/common/enum/entity-name.enum';
 import {
-    Entity,
-    PrimaryGeneratedColumn,
-    Column,
-    CreateDateColumn,
-    UpdateDateColumn,
-    OneToMany,
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn
 } from 'typeorm';
-import { UserAddressEntity } from './address.entity';
 
 @Entity(EntityName.User)
 export class UserEntity {
@@ -24,15 +22,15 @@ export class UserEntity {
   email: string;
   @Column({ unique: true })
   invite_code: string;
-  @Column({ default: 0 })
-  score: number;
-  @Column({ default: 0 })
-  agentId: number;
+  // @Column({ default: 0 })
+  // score: number;
+  // @Column({ default: 0 })
+  // agentId: number;
   @CreateDateColumn({ type: 'time with time zone' })
   created_at: Date;
   @UpdateDateColumn({ type: 'time with time zone' })
   updated_at: Date;
-  
-  @OneToMany(() => UserAddressEntity, (address) => address.user)
-  addressList: UserAddressEntity[];
+
+  // @OneToMany(() => UserAddressEntity, (address) => address.user)
+  // addressList: UserAddressEntity[];
 }

@@ -6,7 +6,7 @@ import { TypeOrmConfig } from 'src/config/typeorm.config';
 import { CategoriesModule } from '../categories/categories.module';
 
 @Module({
-  imports : [TypeOrmModule.forRoot(TypeOrmConfig()),CategoriesModule],
+  imports: [TypeOrmModule.forRoot(TypeOrmConfig()), CategoriesModule],
 
   controllers: [AppController],
   providers: [AppService],

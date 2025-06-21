@@ -1,14 +1,14 @@
-import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreateCategoryDto {
   @ApiProperty()
   title: string;
-  @ApiPropertyOptional({nullable: true})
+  @ApiPropertyOptional({ nullable: true })
   slug: string;
-  @ApiProperty({format: "binary"})
+  @ApiProperty({ format: 'binary' })
   image: string;
-  @ApiProperty({type: "boolean"})
+  @ApiProperty({ type: 'boolean' })
   show: boolean;
-  @ApiPropertyOptional({nullable: true})
+  @ApiPropertyOptional({ nullable: true })
   parentId: number;
 }
